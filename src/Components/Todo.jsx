@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import "./CSS/Todo.css";
 import { useEffect } from "react";
+import TodoItems from "./TodoItems";
 
 let count = 0;
 const Todo = () => {
@@ -35,7 +36,18 @@ const Todo = () => {
         >
           Add
         </div>
-        <div className="todo-list"></div>
+        <div className="todo-list">
+          {todos.map((item, index) => {
+            return (
+              <TodoItems
+                key={index}
+                number={item.number}
+                display={item.display}
+                text={item.text}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
