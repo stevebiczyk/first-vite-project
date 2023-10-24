@@ -14,8 +14,16 @@ const Todo = () => {
     ]);
     inputRef.current.value = "";
   };
+
   useEffect(() => {
-    console.log(todos);
+    setTodos(JSON.parse(localStorage.getItem("todos")));
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      console.log(todos);
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }, 100);
   }, [todos]);
 
   return (
