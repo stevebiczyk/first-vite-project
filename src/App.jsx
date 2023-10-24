@@ -18,7 +18,7 @@ const App = () => {
       >
         Click me
       </button>
-      <FirstComponent data={x} />
+      <FirstComponent data={x} fn={setX} />
     </div>
   );
 };
